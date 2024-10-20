@@ -11,8 +11,7 @@ pipeline {
             steps {
                 // Runs the specified Ansible playbook
                 ansiblePlaybook playbook: 'playbooks/Install-apache2.yaml',
-                                inventory: 'hosts/inventory.ini',
-                                credentialsId: 'ansible-ssh-key'
+                                inventory: 'hosts/inventory.ini'
             }
         }
     }
