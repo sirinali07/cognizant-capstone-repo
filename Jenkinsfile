@@ -10,8 +10,10 @@ pipeline {
         stage('Run Ansible Playbook') {
             steps {
                 // Runs the specified Ansible playbook
-                ansiblePlaybook playbook: 'playbooks/Install-apache2.yaml',
+                withEnv(['ANSIBLE_HOST_KEY_CHECKING=False']) {
+                   ansiblePlaybook playbook: 'playbooks/Install-apache2.yaml',
                                 inventory: 'hosts/inventory.ini'
+                }
             }
         }
     }
