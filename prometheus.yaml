@@ -1,6 +1,6 @@
 ---
 - name: Setup Prometheus on GCP VM
-  hosts: node-2
+  hosts: node-1
   become: yes
   vars:
     prometheus_version: "2.47.1"
